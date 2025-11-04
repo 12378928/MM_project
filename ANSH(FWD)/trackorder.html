@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 🔹 Order Tracking Section Styles */
+    .track-container {
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid #ccc;
+      border-radius: 12px;
+      padding: 30px;
+      margin: 40px auto;
+      width: 320px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(6px);
+    }
+
+    .track-container h2 {
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    .track-container input {
+      width: 80%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+    }
+
+    .track-container button {
+      background-color: #2b7cff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    .track-container button:hover {
+      background-color: #1a5ed9;
+    }
+
+    .result-box {
+      margin-top: 15px;
+      color: white;
+      font-weight: bold;
+    }
+
+    /* 🔹 Map Box */
+    #map {
+      width: 90%;
+      height: 400px;
+      margin: 20px auto;
+      border-radius: 10px;
+      overflow: hidden;
+      display: none;
+    }
+    </style>
+</head>
+<body>
+    <!-- 🔹 Order Tracking Box -->
+    <div class="track-container">
+      <h2>Track Your Order</h2>
+      <input type="text" id="orderId" placeholder="Enter Order ID">
+      <button id="trackBtn">Track Order</button>
+      <div id="result" class="result-box"></div>
+    </div>
+
+    <!-- 🔹 Map container -->
+    <div id="map"></div>
+  </main>
+
+  <hr><br>
+  <footer>
+    <p style="color: white;">&copy; 2024 Men's Clothing Store</p>
+    <b style="font-size: larger; color: #ccc;">Payment Options</b>
+    <ol style="color: #ccc;">
+      <li>PhonePe</li>
+      <li>Google Pay</li>
+      <li>Paytm</li>
+      <li>PayAngle</li>
+      <li>Venmo</li>
+    </ol>
+    <div style="background-color: gray; height: 60px; padding: 30px;">
+      <p class="text">&#128525; Thanks for shopping. &#128525;</p>
+    </div>
+  </footer>
+
+  <!-- 🔹 JS Section -->
+  <script>
+    document.getElementById('trackBtn').addEventListener('click', function () {
+      const orderId = document.getElementById('orderId').value.trim();
+      const resultBox = document.getElementById('result');
+      const mapBox = document.getElementById('map');
+
+      const areas = {
+        Chandkheda: { lat: 23.1025, lon: 72.5800 },
+        Maninagar: { lat: 22.9965, lon: 72.6075 },
+        Bopal: { lat: 22.9822, lon: 72.4532 },
+        Naroda: { lat: 23.0833, lon: 72.6700 },
+        Sanand: { lat: 22.9338, lon: 72.3818 },
+        Gota: { lat: 23.0942, lon: 72.5227 },
+        Sola: { lat: 23.0701, lon: 72.5282 },
+        Sarkhej: { lat: 22.9825, lon: 72.5010 }
+      };
+
+      const areaNames = Object.keys(areas);
+
+      // Random start & destination
+      const start = areaNames[Math.floor(Math.random() * areaNames.length)];
+      let destination = areaNames[Math.floor(Math.random() * areaNames.length)];
+
+      while (destination === start) {
+        destination = areaNames[Math.floor(Math.random() * areaNames.length)];
+      }
+
+      const statuses = [
+        "Preparing order",
+        "Packed and ready to ship",
+        "Shipped from warehouse",
+        "Out for delivery",
+        "Delivered successfully"
+      ];
+      const randomStatus = statuses[Math.floor(Math.random() * statuses.length)];
+
+      if (orderId === "") {
+        resultBox.textContent = "⚠️ Please enter your Order ID!";
+        resultBox.style.color = "yellow";
+        mapBox.style.display = "none";
+        return;
+      }
+
+      resultBox.textContent = `✅ Order ${orderId} Status: ${randomStatus} from ${start} to ${destination}`;
+      resultBox.style.color = "lightgreen";
+
+      // 🗺️ Show map (no API key needed)
+      mapBox.style.display = "block";
+      const mapUrl = `https://www.google.com/maps?q=${areas[start].lat},${areas[start].lon}+to+${areas[destination].lat},${areas[destination].lon}&z=11&output=embed`;
+      mapBox.innerHTML = `<iframe width="100%" height="100%" style="border:0;" loading="lazy" allowfullscreen src="${mapUrl}"></iframe>`;
+    });
+  </script>
+</body>
+</html>

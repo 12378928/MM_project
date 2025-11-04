@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <style>
+    body {
+  margin: 0;
+  padding: 0;
+  background-position: cente;
+  background-size: cover;
+}
+nav ul li {
+    display: inline;
+    margin:15px;
+}
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    opacity: 0.5;
+    color: rgb(2, 2, 250);
+}
+.contact {
+  max-width: 600px;
+  margin: 40px;
+  padding: 30px;
+  border: 5px solid rgb(12, 246, 234);
+  border-radius: 40px;
+
+h1 {
+  text-align: center;
+  margin-bottom:2px;
+}
+
+form {
+  display:grid;
+  gap:5px;
+}
+
+label {
+  margin-bottom:20px;
+  font-weight: bold;;
+}
+
+input, textarea {
+  width:300px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 9px;
+}
+
+textarea {
+  height: 150px;
+}
+
+button {
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 40px;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: green;
+}
+  </style>
+</head>
+<body style="background-image: url('signup.jpg');">
+  <div class="contact">
+    <header>
+      <header>
+          <h1 style="color: #fff;"><center>Fashion Hub</center></h1>
+          <br>
+          <br>
+          <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="Aboutus.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="ratting.html">ratting</a></li>
+  
+            </ul>
+        </nav>
+    </header>
+    <hr>
+    <h2 style="color: beige;"><center>Contact Us</center></h2>
+    <hr>
+    <br>
+    
+    <form style="color: #fff;">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" >
+      <label for="subject">Subject:</label>
+      <input type="text" id="subject" name="subject" >
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" >type your message here</textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  
+</body>
+</html>

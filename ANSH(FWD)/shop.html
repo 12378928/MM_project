@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fashion Hub - Shop Page</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      font-family: Arial, sans-serif;
+    }
+
+    nav ul {
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin: 28px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      opacity: 0.7;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    h1, h2 {
+      text-align: center;
+    }
+
+    .product-categories ul {
+      padding: 0;
+    }
+
+    .product-categories li {
+      margin-bottom: 20px;
+      margin-left: 40px;
+    }
+
+    .product-list li {
+      width: 300px;
+      border: 2px solid #ccc;
+      padding: 20px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .product-list img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .product-list button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .product-list button:hover {
+      background-color: rgba(53, 145, 192, 0.9);
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+    }
+
+    header {
+      text-decoration-color: white;
+    }
+
+    
+  </style>
+</head>
+<body style="background-image: url('signup.jpg');">
+  <header>
+    <h1 style="color: white;"><center>Fashion Hub</center></h1>
+    <hr>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="Aboutus.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="ratting.html">Ratting</a></li>
+      </ul>
+    </nav>
+  </header>
+  <hr>
+
+  <main>
+    <h1 style="color: #ccc;">Shop</h1>
+    <section class="product-categories">
+      <h2 style="color: #ccc;">Categories</h2>
+      <ul>
+        <li><a href="men.html" style="color: aliceblue;">Men's Clothing</a></li>
+        <li><a href="women.html" style="color: aliceblue;">Women's Clothing</a></li>
+        <li><a href="kids.html" style="color: aliceblue;">Kids' Clothing</a></li>
+      </ul>
+    </section>
+
+    <section class="product-list">
+      <h2 style="color: #ccc;">Featured Products</h2>
+      <center>
+        <img src="product1.jpg" alt="Product 1" style="border: 6px solid rgb(64, 149, 61)">
+        <br>
+        <p style="color: rgb(12, 202, 255);">Starts on 31 December.</p>
+        <button onclick="alert('🛒 Item added to your cart!')">Add to Cart</button>
+      </center>
+    </section>
+
+    <!-- 🔹 Place Order Section -->
+<div style="text-align:center; margin-top:40px;">
+  <button id="placeOrderBtn" 
+          style="background-color:#4CAF50; color:white; padding:10px 20px; border:none; border-radius:6px; cursor:pointer;">
+    Place Order
+  </button>
+  <p id="orderMessage" style="color:white; font-weight:bold; margin-top:15px;"></p>
+</div>
+
+<script>
+  document.getElementById("placeOrderBtn").addEventListener("click", function () {
+    // 🔹 Generate random Order ID (ORD + 3 random digits)
+    const randomNum = Math.floor(100 + Math.random() * 900); 
+    const orderId = "ORD" + randomNum;
+
+    // 🔹 Display confirmation message
+    const msg = document.getElementById("orderMessage");
+    msg.style.color = "lightgreen";
+    msg.innerHTML = `✅ Order Placed Successfully!<br>Your Order ID: <b>${orderId}</b>`;
+
+    // 🔹 (Optional) Save to localStorage so user can track later
+    localStorage.setItem("lastOrderId", orderId);
+
+    // 🔹 (Optional) Redirect to tracking page after few seconds
+    // setTimeout(() => window.location.href = "shop.html", 3000);
+  });
+</script>
+
+
+
+
+      <h2>Track Your Order</h2>
+      <a href="trackorder.html"><button id="trackBtn" style="text-align:center; margin-left:auto; margin-right:auto; display:block;">Track Order</button></a>
+      
+  </main>
+
+  <hr><br>
+  <footer>
+    <p style="color: white;">&copy; 2024 Men's Clothing Store</p>
+    <b style="font-size: larger; color: #ccc;">Payment Options</b>
+    <ol style="color: #ccc;">
+      <li>PhonePe</li>
+      <li>Google Pay</li>
+      <li>Paytm</li>
+      <li>PayAngle</li>
+      <li>Venmo</li>
+    </ol>
+    <div style="background-color: gray; height: 60px; padding: 30px;">
+      <p class="text">&#128525; Thanks for shopping. &#128525;</p>
+    </div>
+  </footer>
+
+  
+</body>
+</html>

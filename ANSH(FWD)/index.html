@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Men's Clothing Store</title>
+ <style>
+   body {
+  font-family:arial;
+  background-size: cover;
+  background-position: center;
+}
+
+nav ul {
+    padding: 10px;
+}
+
+nav ul li {
+    display: inline;
+    margin: 25px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    opacity: 0.5;
+}
+.hero {
+  position:relative;
+  height: 600px; 
+}
+
+.hero img {
+  width:100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-text{
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-text h1 {
+  color: #fff;
+  font-size: 100px;
+}
+
+.hero-text p {
+  color: #fff;
+  font-size: 24px;
+  margin-bottom:40px;
+}
+
+.button {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  padding: 12px;
+  font-size: 20px;
+}
+
+.button:hover {
+  background-color: black;
+  color: white;
+}
+
+
+.product-card {
+  border: 3px solid black;
+  padding: 20px;
+  text-align: center;
+}
+
+.product-card img {
+  width: 60%;
+  height: auto;
+}
+
+.product-card h3 {
+  margin-top: 10px;
+}
+
+.product-card p {
+  margin-bottom: 15px;
+}
+.text{
+  color: #ccc;
+  text-align: center;
+  font-size:large;
+}
+
+ </style>
+</head>
+<body style="background-image: url('bg1.avif');">
+  <header>
+    <header>
+      <h1 style="color: white;"><center>Fashion Hub</center></h1>
+      <hr>
+      <nav>
+        <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="shop.html">Shop</a></li>
+              <li><a href="Aboutus.html">About Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="ratting.html">ratting</a></li>
+
+          </ul>
+      </nav>
+  </header>
+<hr>
+  <main>
+    <div class="hero">
+      <img src="bg2.avif" alt="Men's clothing">
+      <div class="hero-text">
+        <h1>Your Style, Elevated</h1>
+        <p>Discover the latest trends in men's fashion.</p>
+        <a href="shop.html" class="button">Shop Now</a>
+        <br>
+       <a href="login.html" class="button">login</a>
+      </div>
+    </div>
+
+    <section class="featured-products">
+      <h2 style="color:rgb(251, 255, 0)" align="center">Featured Products</h2>
+      <div class="product">
+        <div class="product-card">
+          <img src="cloth1.webp" alt="Product 1" width="300">
+          <h1>men's shirt</h1>
+          <h4>Price: $30</h4>
+          <br>
+          <a href="cart.html" class="button">Add to Cart</a>
+        </div>
+        <div class="product">
+          <div class="product-card">
+            <img src="cloth2.webp" alt="Product 2" width="300">
+            <h1>girls shirt</h1>
+            <h4>Price: $20</h4>
+            <a href="cart.html" class="button">Add to Cart</a>
+          </div>
+          
+      </div>
+      
+    </section>
+
+    <section class="new-arrivals">
+      <h2>New Arrivals</h2>
+      <div class="product-grid">
+      </div>
+    </section>
+    <hr size="4">
+
+    <section class="about-us">
+      <h1 align="center">About Us</h1>
+      <h3 style="text-align: justify;"><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis a laborum facilis deserunt labore porro nesciunt dolorem illum rem iure, nisi repellat. Necessitatibus rem voluptate officiis natus totam ut alias.'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim labore illum, itaque nihil iste hic earum, praesentium, dolor nemo ut quas optio? Numquam sequi cupiditate fuga ex quae minus corporis! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum incidunt illum ducimus quis quasi necessitatibus asperiores aliquam, iste quod nesciunt praesentium corporis cum odit, dolorum fugit saepe deserunt eum qui! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure veritatis, nobis unde in sint, odio facilis neque culpa dolorem alias reiciendis veniam nisi quasi ipsa! Quasi dignissimos fugit officiis facilis?</h3>
+    </section>
+  </main>
+<hr>
+  <footer>
+    <p style="color:white;">&copy; 2024 Men's Clothing Store</p>
+    <b style="font-size: larger;">payment option</b>
+    <ol style="color:black;">
+      <li>phone pay</li>
+      <li>google pay</li>
+      <li>paytm</li>
+      <li>payAngle</li>
+      <li>venmo</li>
+    </ol>
+    <div style="background-color: gray; height: 30px; padding: 30px;">
+    <p class="text">&#128525 thanks for shopping. &#128525</p>
+  </div>
+  </footer>
+</body>
+</html>
